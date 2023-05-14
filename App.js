@@ -1,4 +1,4 @@
-import { StyleSheet, ImageBackground, SafeAreaView } from "react-native";
+import { StyleSheet, ImageBackground, SafeAreaView, Text } from "react-native";
 
 import { LinearGradient } from "expo-linear-gradient";
 
@@ -8,9 +8,6 @@ import GameScreen from "./screens/GameScreen";
 import Colors from "./constants/colors";
 import GameOverScreen from "./screens/GameOverScreen";
 import { useFonts } from "expo-font";
-import * as SplashScreen from "expo-splash-screen";
-
-SplashScreen.preventAutoHideAsync();
 
 export default function App() {
   const [userNumber, setUserNumber] = useState(null);
@@ -21,7 +18,7 @@ export default function App() {
     "open-sans-bold": require("./assets/fonts/OpenSans-Bold.ttf"),
   });
 
-  if (fontsLoaded) SplashScreen.hideAsync();
+  if (!fontsLoaded) return <Text>Loadding...</Text>;
 
   const pickedNumberHandler = (number) => {
     setUserNumber(number);
