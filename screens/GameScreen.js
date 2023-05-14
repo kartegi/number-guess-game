@@ -4,6 +4,7 @@ import Title from "../components/ui/Title";
 import NumberContainer from "../components/game/NumberContainer";
 import PrimaryButton from "../components/ui/PrimaryButton";
 import Card from "../components/ui/Card";
+import { Ionicons } from "@expo/vector-icons";
 
 const generateRandomBetween = (min, max, exclude) => {
   const rndNum = Math.floor(Math.random() * (max - min)) + min;
@@ -54,12 +55,15 @@ const GameScreen = ({ userNumber, onGameOver }) => {
       <Card title={"Higher or lower?"}>
         <View style={styles.buttonsContainer}>
           <View style={styles.buttonContainer}>
-            <PrimaryButton onPress={() => newxGuessNumber("lower")} title="-" />
+            <PrimaryButton
+              onPress={() => newxGuessNumber("lower")}
+              title={<Ionicons name="md-remove" size={24} color="white" />}
+            />
           </View>
           <View style={styles.buttonContainer}>
             <PrimaryButton
               onPress={() => newxGuessNumber("greater")}
-              title="+"
+              title={<Ionicons name="md-add" size={24} color="white" />}
             />
           </View>
         </View>
