@@ -3,7 +3,7 @@
     "name": "react-native-udemy-02",
     "slug": "react-native-udemy-02",
     "version": "1.0.0",
-    "orientation": "portrait",
+    "orientation": "default",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
